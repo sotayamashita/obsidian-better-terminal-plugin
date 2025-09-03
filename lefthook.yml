@@ -1,0 +1,15 @@
+pre-commit:
+    parallel: true
+    commands:
+        eslint:
+            glob: "*.{js,jsx,ts,tsx}"
+            run: pnpm exec eslint --fix
+        prettier:
+            glob: "*"
+            run: pnpm exec prettier --write --ignore-unknown {staged_files}
+
+pre-push:
+    parallel: true
+    commands:
+        package-audit:
+            run: pnpm audit

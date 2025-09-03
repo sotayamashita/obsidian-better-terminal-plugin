@@ -20,3 +20,12 @@ data.json
 
 # Exclude macOS Finder (System Explorer) View States
 .DS_Store
+
+# Ignore Claude Code Local Settings
+# https://docs.anthropic.com/en/docs/claude-code/settings#settings-files
+.claude/settings.local.json
+
+# Ignore Serena output files except project.yml
+# @see https://github.com/oraios/serena
+.serena/*
+!.serena/project.yml
